@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1" />
+<title>Students List</title>
+<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css" 
+    th:href="@{/css/bootstrap.min.css}"/>
+    
+<link rel="stylesheet" type="text/css" href="../static/css/myStyle.css" 
+    th:href="@{/css/myStyle.css}"/>
+</head>
+<body>
+ <div class="container ">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>ID</th> <th>NAME</th> <th>DATE</th> <th>EMAIL</th> <th>PICTURE</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr th:each="e:${pageStudents}">
+				<td th:text="${e.id}"></td>
+				<td th:text="${e.nom}"></td>
+				<td th:text="${e.dateNaissance}"></td>
+				<td th:text="${e.email}"></td>
+				<td th:text="${e.photo}"></td>
+			</tr>
+		</tbody>
+	</table>
+ </div>
+</body>
+</html>
